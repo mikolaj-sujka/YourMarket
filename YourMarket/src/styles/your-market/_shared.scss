@@ -1,0 +1,30 @@
+.form-control {
+  display: block !important;
+  width: 441px !important;
+  border-color: #905ECE !important;
+  border-style: solid !important;
+  border-width: 0 0 1px 0 !important;
+  padding: 1.5rem 1rem 0.9rem 1.5rem !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  background-clip: padding-box !important;
+
+  &::placeholder {
+    color: #a7a7a7 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    opacity: 50%;
+  }
+
+  &:focus {
+    color: #495057 !important;
+    background-color: #fff !important;
+    border-color: #fff !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+.sign-in-up-margin {
+  margin-left: 40px !important;
+}

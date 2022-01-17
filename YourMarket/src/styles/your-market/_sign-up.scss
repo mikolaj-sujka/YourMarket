@@ -1,0 +1,61 @@
+.container-register {
+  max-width: 1460px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .shopping-img {
+    background: url('../../assets/img/sign-up-img.svg');
+    width: 230px !important;
+    height: 230px !important;
+    position: absolute;
+    top: 70px !important;
+    right: 250px !important;
+  }
+
+  .content {
+    margin: 5%;
+    background-color: #fff;
+    padding: 4rem 2rem 4rem 2rem;
+    box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.034);
+
+    a {
+      text-decoration: none;
+      color: #905ECE;
+    }
+
+    p {
+      color: #c9c9c9;
+    }
+
+    .form-check {
+      display: inline-block;
+
+      .form-check-input {
+        height: 29px;
+        width: 29px;
+      }
+
+      .form-check-label {
+        margin-left: 10px !important;
+        margin-top: 7px !important;
+      }
+    }
+
+    .btn-continue {
+      border-radius: 11px;
+      width: 180px;
+      height: 60px;
+      background-color: #905ECE;
+      display: inline-block;
+      margin-right: 40px;
+      color: #fff;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+
+      &:hover {
+        background: rgba(115, 0, 255, 0.86);
+      }
+    }
+  }
+}

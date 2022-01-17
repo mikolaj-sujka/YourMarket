@@ -1,0 +1,73 @@
+$breakpoint-iphone-se: 376px;
+
+@media (max-width: $breakpoint-iphone-se) {
+
+  // sign-in
+  .sign-in-img-info {
+    display: none;
+  }
+
+  .form-container {
+    background: #fff !important;
+    height: 667px !important;
+
+    .form-control {
+      width: 300px !important;
+    }
+
+    .btn-sign-in {
+      width: 300px !important;
+    }
+
+    .hr-1 {
+      margin-top: 0px !important;
+    }
+  }
+
+  // sign-up
+
+  .container-register {
+    width: 375px !important;
+
+    .shopping-img {
+      display: none;
+    }
+
+    .content {
+      padding-left: 0px !important;
+      box-shadow: none !important;
+
+      .form-control {
+        width: 300px !important;
+      }
+    }
+
+    .margin-rwd {
+      margin-left: 20px !important;
+
+      &-info {
+        margin-left: 40px !important;
+      }
+    }
+
+    .form-check-input {
+      height: 19px !important;
+      width: 19px !important;
+      margin-top: 7px !important;
+    }
+
+    .form-check-label {
+      font-size: 15px !important;
+    }
+
+    .btn-continue {
+        margin-right: 0px !important;
+        margin-left: 32px !important;
+        margin-top: 25px !important;
+    }
+  }
+
+  .sign-in-up-margin {
+    margin-left: 20px !important;
+  }
+}

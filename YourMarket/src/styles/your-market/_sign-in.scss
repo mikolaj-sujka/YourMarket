@@ -9,58 +9,42 @@
   }
 
   .form-container {
-    background: rgba(144, 94, 206, 0.67);
-    height: 753px !important;
+    background: #905ECE;
+    height: 753px;
     width: 911px !important;
 
     &-background {
       background-color: #fff !important;
       margin: auto;
-      margin-top: 4%;
-      width: 591px !important;
-      height: 653px !important;
-      border-radius: 75px;
+      width: 551px !important;
+      height: 703px !important;
+      border-radius: 11px;
     }
-
-    .sign-in-margin {
-      margin-left: 45px !important;
-    }
-
-    .form-group {
-      .form-control {
-        background: rgba(196, 196, 196, 0.49);
-        border-radius: 16px;
-        width: 481px;
-        height: 81px;
-        border: none;
-
-      }
-
-      ::placeholder {
-        color: #7D7D7D !important;
-        font-size: 20px !important;
-        font-weight: 700 !important;
-        opacity: 50%;
-      }
+    
+    a {
+      text-decoration: none;
+      color: #905ECE;
     }
 
     .btn-sign-in {
-      background: rgba(144, 94, 206, 0.46);
-      border-radius: 16px;
-      width: 481px;
-      height: 81px;
+      background: #905ECE;
+      border-radius: 11px;
+      width: 441px;
+      height: 65px;
       color: #fff;
       font-size: 20px !important;
       font-weight: 700 !important;
+      text-transform: uppercase;
 
       &:hover {
-        background: rgba(144, 94, 206, 0.86);
+        background: rgba(115, 0, 255, 0.86);
       }
     }
 
     .hr-1 {
-      border: 1px solid rgba(0, 0, 0, 0.33);
+      border: 2px solid #F1F1F1;
       transform: rotate(-0.18deg);
+      margin-top: 160px;
     }
   }
 
