@@ -1,0 +1,43 @@
+
+.font-big {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+
+    &-sign-in {
+        white-space: nowrap;
+    }
+}
+
+.font-medium {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+
+    &-sign-in {
+        text-transform: uppercase;
+    }
+}
+
+.font-small {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+
+    &-sign-in {
+        text-transform: uppercase;
+    }
+}
+
+.font-market-color {
+    color: #905ECE;
+}
+
+.font-color-grey {
+    color: #CACACA;
+}
+
+.normal-weight {
+    font-weight: 400 !important;
+}
+
+.bold-weight {
+    font-weight: 700 !important;
+}
