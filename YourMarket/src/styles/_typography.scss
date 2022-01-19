@@ -1,48 +1,82 @@
-
 .font-big {
-    font-size: 30px !important;
-    font-weight: 700 !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
 
-    &-sign-in {
-        white-space: nowrap;
-    }
+  &-sign-in {
+    white-space: nowrap;
+  }
+}
+
+.font-big-2 {
+  font-size: 50px !important;
 }
 
 .font-medium {
-    font-size: 25px !important;
-    font-weight: 700 !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
 
-    &-sign-in {
-        text-transform: uppercase;
-    }
+  &-sign-in {
+    text-transform: uppercase;
+  }
+}
+
+.font-medium-2 {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+
+.font-medium-3 {
+  font-size: 20px !important;
+  font-weight: 300 !important;
+}
+
+.font-medium-4 {
+  font-size: 20px !important;
+  letter-spacing: 15.5px;
 }
 
 .font-small {
-    font-size: 15px !important;
-    font-weight: 700 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
 
-    &-sign-in {
-        text-transform: uppercase;
-    }
+  &-sign-in {
+    text-transform: uppercase;
+  }
 
-    &-info {
-        font-size: 16px !important;
-        padding-right: 45px !important;
-    }
+  &-info {
+    font-size: 16px !important;
+    padding-right: 45px !important;
+  }
+}
+
+.font-small-2 {
+  font-size: 15px !important;
 }
 
 .font-market-color {
-    color: #905ECE;
+  color: #905ECE;
 }
 
 .font-color-grey {
-    color: #CACACA;
+  color: #CACACA;
+}
+
+.font-color-grey-2 {
+  color: #7D7D7D;
+}
+
+.font-color-white {
+  color: #FDFDFD;
 }
 
 .normal-weight {
-    font-weight: 400 !important;
+  font-weight: 400 !important;
 }
 
 .bold-weight {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
+}
+
+.font-no-wrap {
+  white-space: nowrap;
 }
