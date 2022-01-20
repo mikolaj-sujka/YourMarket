@@ -14,6 +14,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { ContactViewComponent } from './home-page/contact-view/contact-view.component';
+import { FilterProductsComponent } from './search-page/filter-products/filter-products.component';
+import { MyBasketViewComponent } from './my-basket-view/my-basket-view.component';
 
 // 3rd
 
@@ -27,6 +29,8 @@ import { ContactViewComponent } from './home-page/contact-view/contact-view.comp
     FooterComponent,
     SearchPageComponent,
     ContactViewComponent,
+    FilterProductsComponent,
+    MyBasketViewComponent,
   ],
   imports: [
     BrowserModule,
