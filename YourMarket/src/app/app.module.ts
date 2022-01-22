@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 // components
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { ContactViewComponent } from './home-page/contact-view/contact-view.component';
 import { FilterProductsComponent } from './search-page/filter-products/filter-products.component';
 import { MyBasketViewComponent } from './my-basket-view/my-basket-view.component';
+import { MyProfileViewComponent } from './my-profile-view/my-profile-view.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 // 3rd
 
@@ -31,12 +34,15 @@ import { MyBasketViewComponent } from './my-basket-view/my-basket-view.component
     ContactViewComponent,
     FilterProductsComponent,
     MyBasketViewComponent,
+    MyProfileViewComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

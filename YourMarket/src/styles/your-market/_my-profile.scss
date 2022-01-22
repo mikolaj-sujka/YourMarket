@@ -1,0 +1,31 @@
+.container-my-profile {
+    margin-left: 200px !important;
+  .account-info-hr {
+    position: absolute;
+    height: 3px;
+    color: rgb(0, 0, 0);
+    width: 668px;
+  }
+
+  .info-hr {
+    height: 1px;
+    color: #bababa;
+    width: 937px;
+    margin-top: 30px !important;
+
+    &-password {
+        margin-bottom: 95px !important;
+    }
+  }
+
+  .container-info {
+      width: 937px !important;
+  }
+}
+
+.profile-img {
+    position: absolute;
+    height: 350px;
+    right: 140px;
+    top: 140px;
+}
