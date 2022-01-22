@@ -1,7 +1,7 @@
 .footer-container {
   background: #FFFFFF;
   box-shadow: 0px 4px 5px 5px rgba(0, 0, 255, 0.15);
-  height: 470px !important;
+  height: 390px !important;
 
   .container {
     margin-right: 90px !important;
@@ -14,8 +14,52 @@
   .footer-hr {
     width: 1228px;
     border: 1px solid #000000;
-    margin-top: 55px !important;
-    margin-bottom: 30px !important;
-    margin-left: 25px !important;
+    margin: 35px 0px 30px 25px !important;
+  }
+}
+
+
+/* icons */
+.icons {
+  float: right;
+  margin-right: 155px !important;
+
+  .youtube-icon {
+    height: 31px;
+    width: 31px;
+    display: inline-block;
+    background: url('../../assets/img/youtube-ic.png') no-repeat;
+    margin-left: 5px !important;
+  }
+
+  .linkedin-icon {
+    height: 31px;
+    width: 31px;
+    display: inline-block;
+    background: url('../../assets/img/linkedin-ic.png') no-repeat;
+    margin-left: 5px !important;
+  }
+
+  .twitter-icon {
+    height: 31px;
+    width: 31px;
+    display: inline-block;
+    background: url('../../assets/img/twitter-ic.png') no-repeat;
+    margin-left: 5px !important;
+  }
+
+  .facebook-icon {
+    height: 31px;
+    width: 31px;
+    display: inline-block;
+    background: url('../../assets/img/facebook-ic.png') no-repeat;
+  }
+
+  .instagram-icon {
+    height: 31px;
+    width: 31px;
+    display: inline-block;
+    background: url('../../assets/img/instagram-ic.png') no-repeat;
+    margin-left: 5px !important;
   }
 }

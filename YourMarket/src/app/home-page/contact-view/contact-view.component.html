@@ -1,4 +1,4 @@
-<div class="contact-us-container mt-2 mb-5 pb-4">
+<div class="contact-us-container mt-5 pt-3 mb-5 pb-4">
   <div class="row">
     <div class="col">
       <h1 class="text-uppercase contact-margin">
@@ -25,7 +25,7 @@
         <div class="mb-3">
           <input
             type="text"
-            class="form-control"
+            class="form-control form-control-contact"
             id="phoneNumber"
             aria-describedby="emailHelp"
             placeholder="Phone Number"
@@ -34,7 +34,7 @@
         <div class="mb-3">
           <input
             type="email"
-            class="form-control"
+            class="form-control form-control-contact"
             id="email"
             placeholder="Email"
           />
@@ -42,20 +42,24 @@
         <div class="mb-3">
           <input
             type="text"
-            class="form-control"
+            class="form-control form-control-contact"
             id="nameOfCompany"
             placeholder="Name Of Company"
           />
         </div>
-        <div class="mb-3">
-          <textarea
-            class="form-control form-textarea"
-            id="exampleFormControlTextarea1"
-            rows="6"
-            placeholder="Additional Info"
-          ></textarea>
+        <div class="row">
+          <div class="col">
+              <textarea
+                class="form-control form-textarea"
+                id="exampleFormControlTextarea1"
+                rows="6"
+                placeholder="Additional Info"
+              ></textarea>
+          </div>
+          <div class="col align-self-end">
+            <button type="submit" class="btn btn-send">Send</button>
+          </div>
         </div>
-        <button type="submit" class="btn btn-send">Send</button>
       </form>
     </div>
   </div>
