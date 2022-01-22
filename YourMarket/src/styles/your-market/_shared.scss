@@ -28,3 +28,18 @@
 .sign-in-up-margin {
   margin-left: 40px !important;
 }
+
+.shared-hr {
+  position: absolute;
+  height: 3px !important;
+  color: rgb(0, 0, 0);
+  width: 668px;
+}
+
+.container-info {
+  width: 937px !important;
+
+  &-order {
+    width: 1120px;
+  }
+}
