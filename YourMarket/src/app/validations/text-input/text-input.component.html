@@ -1,12 +1,11 @@
-<div class="form-floating mt-1">
+<div class="form-floating">
   <input
     [class.is-invalid]="ngControl.touched && ngControl.invalid"
     type="{{ type }}"
-    class="form-control form-register"
+    class="form-control form-control-custom"
     [formControl]="ngControl.control"
     placeholder="{{ label }}"
-  />
-  <label for="floatingInput">{{ label }}</label>
+    />
   <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">
     Please enter a {{ label }}
   </div>

@@ -15,44 +15,32 @@
     <div class="col-12 col-sm-5 mt-1 sign-in-up-margin">
       <form [formGroup]="signUpForm">
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['email']"
-            name="email"
-            type="email"
-            class="form-control form-control-custom"
-            id="email"
-            placeholder="Email"
-          />
+          <app-text-input
+              [formControl]="signUpForm.controls['email']"
+              [label]="'Email'"
+              [type]="'email'"
+            ></app-text-input>
         </div>
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['nip']"
-            name="nip"
-            type="text"
-            class="form-control form-control-custom"
-            id="nip"
-            placeholder="NIP"
-          />
+          <app-text-input
+              [formControl]="signUpForm.controls['nip']"
+              [label]="'NIP'"
+              [type]="'text'"
+            ></app-text-input>
         </div>
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['postalCode']"
-            name="postalCode"
-            type="text"
-            class="form-control form-control-custom"
-            id="postalCode"
-            placeholder="Postal Code"
-          />
+          <app-text-input
+              [formControl]="signUpForm.controls['nameOfCompany']"
+              [label]="'Name of company'"
+              [type]="'text'"
+            ></app-text-input>
         </div>
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['password']"
-            name="password"
-            type="password"
-            class="form-control form-control-custom"
-            id="password"
-            placeholder="Password"
-          />
+            <app-text-input
+              [formControl]="signUpForm.controls['password']"
+              [label]="'Password'"
+              [type]="'password'"
+            ></app-text-input>
         </div>
       </form>
     </div>
@@ -60,34 +48,25 @@
       <form [formGroup]="signUpForm">
         <div class="mt-1 mb-4 pb-5"></div>
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['nameOfCompany']"
-            name="nameOfCompany"
-            type="text"
-            class="form-control form-control-custom"
-            id="nameOfCompany"
-            placeholder="Name of Company"
-          />
+          <app-text-input
+              [formControl]="signUpForm.controls['city']"
+              [label]="'City'"
+              [type]="'text'"
+            ></app-text-input>
         </div>
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['city']"
-            name="city"
-            type="text"
-            class="form-control form-control-custom"
-            id="city"
-            placeholder="City"
-          />
+          <app-text-input
+              [formControl]="signUpForm.controls['postalCode']"
+              [label]="'Postal Code'"
+              [type]="'text'"
+            ></app-text-input>
         </div>
         <div class="mt-1">
-          <input
-            [formControl]="signUpForm.controls['repeatPassword']"
-            name="repeatPassword"
-            type="password"
-            class="form-control form-control-custom"
-            id="repeatPassword"
-            placeholder="Repeat Password"
-          />
+          <app-text-input
+              [formControl]="signUpForm.controls['repeatPassword']"
+              [label]="'Repeat Password'"
+              [type]="'password'"
+            ></app-text-input>
         </div>
       </form>
     </div>
@@ -100,8 +79,8 @@
         <input
           class="form-check-input"
           type="checkbox"
-          value=""
           id="termsCheckbox"
+          (click)="onClickCheckbox($event)"
         />
         <label class="form-check-label" for="termsCheckbox">
           <span class="font-market-color bold-weight"
@@ -114,7 +93,7 @@
       <button
         class="btn btn-continue"
         type="submit"
-        [disabled]="signUpForm.invalid"
+        [disabled]="signUpForm.invalid || (!checkedCheckbox && !signUpForm.touched)"
       >
         Sign Up
       </button>
