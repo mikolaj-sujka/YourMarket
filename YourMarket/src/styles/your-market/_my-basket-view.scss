@@ -1,0 +1,71 @@
+.container-basket {
+  &-info {
+    margin-left: 200px !important;
+
+    .basket-info-hr {
+      width: 612px !important;
+      height: 1px;
+      color: rgba(0, 0, 0, 0.333);
+      margin-bottom: 0 !important;
+    }
+
+    .basket-info-hr-absolute {
+      width: 612px !important;
+      height: 1px;
+      color: rgba(0, 0, 0, 0.333);
+      position: absolute;
+      top: 300px;
+    }
+
+    .basket-info {
+      width: 612px !important;
+    }
+
+    .square-payment {
+      height: 385px;
+      width: 385px;
+      background: #FFFFFF;
+      border: 3px solid #a2a2a2;
+
+      .basket-payment-hr {
+        width: 330px;
+        height: 2px;
+        color: rgba(47, 47, 47, 0.265);
+        margin-bottom: 0 !important;
+        margin-left: 20px !important;
+      }
+
+      .btn-checkout {
+        color: #fff !important;
+        background-color: #905ECE !important;
+        border-radius: 36px !important;
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25) !important;
+        border: none !important;
+        padding: 16px !important;
+        margin-left: 70px !important;
+      }
+    }
+
+    .payment-icons {
+      width: 385px;
+
+      .visa-ic {
+        height: 31px;
+        width: 94px;
+        background: url('../../assets/img/visa-ic.png');
+      }
+
+      .mastercard-ic {
+        height: 31px;
+        width: 52px;
+        background: url('../../assets/img/mastercard-ic.png');
+      }
+
+      .paypal-ic {
+        height: 35px;
+        width: 29px;
+        background: url('../../assets/img/paypal-ic.png');
+      }
+    }
+  }
+}
