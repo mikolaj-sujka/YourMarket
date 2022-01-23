@@ -1,32 +1,71 @@
 <div class="container">
   <div class="row">
     <div class="col pt-4 mt-5 sign-in-img-info">
-        <h1 class="font-big font-big-sign-in pb-3"><span class="bold-weight font-market-color">YourMarket</span> Account</h1>
-        <img src="../../assets/img/sign-in-img.svg" alt="shopping-online" class="shop-img" />
-        <h2 class="font-medium font-medium-sign-in pt-4"> Lörem ipsum fanat <span class="font-market-color">egovis midulig</span> 
-            nagelprotest. Tremåliga smartball.</h2>
-        <p class="font-small font-small-sign-in pt-4 font-color-grey">Lörem ipsum nynt dötyvis trisocial. Laheten bektiga. Gretaeffekten 
-            multiheskapet prengen. Palaling triktig i kujyheten. Spegen vadade hajygt och rebel liling. </p>
+      <h1 class="font-big font-big-sign-in pb-3">
+        <span class="bold-weight font-market-color">YourMarket</span> Account
+      </h1>
+      <img
+        src="../../assets/img/sign-in-img.svg"
+        alt="shopping-online"
+        class="shop-img"
+      />
+      <h2 class="font-medium font-medium-sign-in pt-4">
+        Lörem ipsum fanat
+        <span class="font-market-color">egovis midulig</span> nagelprotest.
+        Tremåliga smartball.
+      </h2>
+      <p class="font-small font-small-sign-in pt-4 font-color-grey">
+        Lörem ipsum nynt dötyvis trisocial. Laheten bektiga. Gretaeffekten
+        multiheskapet prengen. Palaling triktig i kujyheten. Spegen vadade
+        hajygt och rebel liling.
+      </p>
     </div>
     <div class="col p-4 form-container">
-        <div class="form-container-background">
-            <h1 class="font-medium pt-5 sign-in-up-margin">Sign In</h1>
-            <p class="font-small normal-weight sign-in-up-margin pt-1">You don't have account? <span class="font-market-color bold-weight">
-                <a routerLink="register">Sign Up</a></span>
-            </p>
+      <div class="form-container-background">
+        <h1 class="font-medium pt-5 sign-in-up-margin">Sign In</h1>
+        <p class="font-small normal-weight sign-in-up-margin pt-1">
+          You don't have account?
+          <span class="font-market-color bold-weight">
+            <a routerLink="register">Sign Up</a></span
+          >
+        </p>
 
-            <form>
-                <div class="form-group pt-3 mt-3 pb-4 mb-2 sign-in-up-margin">
-                    <input type="email" class="form-control form-control-custom" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                    </div>
-                    <div class="form-group sign-in-up-margin">
-                        <input type="password" class="form-control form-control-custom" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <p class="font medium bold-weight font-market-color pt-3 pb-5 mb-5 sign-in-up-margin">Forgot Password</p>
-                    <hr class="hr-1 mb-5">
-                    <button type="submit" class="btn btn-sign-in sign-in-up-margin" routerLink="/home-page">Sign In</button>
-            </form>
-        </div>
+        <form [formGroup]="signInForm">
+          <div class="form-group pt-3 mt-3 pb-4 mb-2 sign-in-up-margin">
+            <input
+              [formControl]="signInForm.controls['email']"
+              type="email"
+              class="form-control form-control-custom"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group sign-in-up-margin">
+            <input
+              [formControl]="signInForm.controls['password']"
+              type="password"
+              class="form-control form-control-custom"
+              id="exampleInputPassword1"
+              placeholder="Password"
+            />
+          </div>
+          <p
+            class="font medium bold-weight font-market-color pt-3 pb-5 mb-5 sign-in-up-margin"
+          >
+            Forgot Password
+          </p>
+          <hr class="hr-1 mb-5" />
+          <button
+            [disabled]="signInForm.invalid"
+            type="submit"
+            class="btn btn-sign-in sign-in-up-margin"
+            routerLink="/home-page"
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

@@ -1,14 +1,22 @@
 <div class="container-register">
-  <img src="../../assets/img/sign-up-img.svg" alt="shop-img" class="shopping-img">
+  <img
+    src="../../assets/img/sign-up-img.svg"
+    alt="shop-img"
+    class="shopping-img"
+  />
   <div class="row g-0 content">
     <h1 class="font-medium sign-in-up-margin">Sign Up</h1>
-    <p class="font-small normal-weight pt-1 sign-in-up-margin text-dark">You don't have account? <span class="font-market-color bold-weight">
-      <a routerLink="/">Sign In</a></span>
+    <p class="font-small normal-weight pt-1 sign-in-up-margin text-dark">
+      You don't have account?
+      <span class="font-market-color bold-weight">
+        <a routerLink="/">Sign In</a></span
+      >
     </p>
     <div class="col-12 col-sm-5 mt-1 sign-in-up-margin">
-        <form>
+      <form [formGroup]="signUpForm">
         <div class="mt-1">
           <input
+            [formControl]="signUpForm.controls['email']"
             name="email"
             type="email"
             class="form-control form-control-custom"
@@ -18,6 +26,7 @@
         </div>
         <div class="mt-1">
           <input
+            [formControl]="signUpForm.controls['nip']"
             name="nip"
             type="text"
             class="form-control form-control-custom"
@@ -27,6 +36,7 @@
         </div>
         <div class="mt-1">
           <input
+            [formControl]="signUpForm.controls['postalCode']"
             name="postalCode"
             type="text"
             class="form-control form-control-custom"
@@ -36,6 +46,7 @@
         </div>
         <div class="mt-1">
           <input
+            [formControl]="signUpForm.controls['password']"
             name="password"
             type="password"
             class="form-control form-control-custom"
@@ -45,52 +56,68 @@
         </div>
       </form>
     </div>
-      <div class="col-6 margin-rwd">
-        <form>
-          <div class="mt-1 mb-4 pb-5">
-          </div>
-          <div class="mt-1">
-            <input
-              name="nameOfCompany"
-              type="text"
-              class="form-control form-control-custom"
-              id="nameOfCompany"
-              placeholder="Name of Company"
-            />
-          </div>
-          <div class="mt-1">
-            <input
-              name="city"
-              type="text"
-              class="form-control form-control-custom"
-              id="city"
-              placeholder="City"
-            />
-          </div>
-          <div class="mt-1">
-            <input
-              name="repeatPassword"
-              type="password"
-              class="form-control form-control-custom"
-              id="repeatPassword"
-              placeholder="Repeat Password"
-            />
-          </div>
-        </form>
-      </div>
-      <p class="pt-3 bold-weight font-small-info text-center margin-rwd-info">Minimum 8 characters and at least one uppercase letter, one lowercase letter, 
-        one number and one symbol.
-      </p>
-      <div class="col pt-2">
-        <div class="form-check sign-in-up-margin pt-2">
-          <input class="form-check-input" type="checkbox" value="" id="termsCheckbox">
-          <label class="form-check-label" for="termsCheckbox">
-            <span class="font-market-color bold-weight">I accept YourMarket Terms of Use.</span>
-          </label>
+    <div class="col-6 margin-rwd">
+      <form [formGroup]="signUpForm">
+        <div class="mt-1 mb-4 pb-5"></div>
+        <div class="mt-1">
+          <input
+            [formControl]="signUpForm.controls['nameOfCompany']"
+            name="nameOfCompany"
+            type="text"
+            class="form-control form-control-custom"
+            id="nameOfCompany"
+            placeholder="Name of Company"
+          />
         </div>
+        <div class="mt-1">
+          <input
+            [formControl]="signUpForm.controls['city']"
+            name="city"
+            type="text"
+            class="form-control form-control-custom"
+            id="city"
+            placeholder="City"
+          />
+        </div>
+        <div class="mt-1">
+          <input
+            [formControl]="signUpForm.controls['repeatPassword']"
+            name="repeatPassword"
+            type="password"
+            class="form-control form-control-custom"
+            id="repeatPassword"
+            placeholder="Repeat Password"
+          />
+        </div>
+      </form>
+    </div>
+    <p class="pt-3 bold-weight font-small-info text-center margin-rwd-info">
+      Minimum 8 characters and at least one uppercase letter, one lowercase
+      letter, one number and one symbol.
+    </p>
+    <div class="col pt-2">
+      <div class="form-check sign-in-up-margin pt-2">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="termsCheckbox"
+        />
+        <label class="form-check-label" for="termsCheckbox">
+          <span class="font-market-color bold-weight"
+            >I accept YourMarket Terms of Use.</span
+          >
+        </label>
       </div>
-      <div class="col text-center">
-        <button class="btn btn-continue">Continue</button>
-      </div>
+    </div>
+    <div class="col text-center">
+      <button
+        class="btn btn-continue"
+        type="submit"
+        [disabled]="signUpForm.invalid"
+      >
+        Sign Up
+      </button>
+    </div>
   </div>
 </div>

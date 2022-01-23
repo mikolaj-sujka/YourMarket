@@ -19,6 +19,8 @@ import { FilterProductsComponent } from './search-page/filter-products/filter-pr
 import { MyBasketViewComponent } from './my-basket-view/my-basket-view.component';
 import { MyProfileViewComponent } from './my-profile-view/my-profile-view.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from './validations/text-input/text-input.component';
 
 // 3rd
 
@@ -35,14 +37,16 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     FilterProductsComponent,
     MyBasketViewComponent,
     MyProfileViewComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
