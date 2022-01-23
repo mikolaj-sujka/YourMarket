@@ -12,8 +12,8 @@ export class LoaderService {
     this.requestCount++;
     this.spinnerService.show(undefined, {
       type: 'timer',
-      bdColor: 'rgba(144, 94, 206, 1)',
-      color: '#1E90FF',
+      bdColor: 'rgba(255,255,255,0.9)',
+      color: '#905ECE',
       size: 'large',
     });
   }

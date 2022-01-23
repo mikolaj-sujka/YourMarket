@@ -31,8 +31,8 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.authService.loginUser({ email: this.signInForm.value.email, password: this.signInForm.value.password})
-    console.log(this.signInForm.value.email + " " +  this.signInForm.value.password)
+    this.authService.loginUser({ email: this.signInForm.value.email, password: this.signInForm.value.password})
+    console.log(this.signInForm.value)
     this.signInForm.reset();
   }
 

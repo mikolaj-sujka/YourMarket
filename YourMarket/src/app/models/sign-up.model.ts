@@ -4,6 +4,5 @@ export interface SignUpUser {
     postalCode: string;
     city: string;
     nameOfCompany: string;
-    repeatPassword: string;
     password: string;
 }

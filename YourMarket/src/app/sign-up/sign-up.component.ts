@@ -46,15 +46,14 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.authService.signUpUser({ 
-    //   email: this.signUpForm.value.email,
-    //   nip: this.signUpForm.value.nip,
-    //   nameOfCompany: this.signUpForm.value.nameOfCompany,
-    //   city: this.signUpForm.value.city,
-    //   password: this.signUpForm.value.password,
-    //   repeatPassword: this.signUpForm.value.repeatPassword,
-    //   postalCode: this.signUpForm.value.postalCode 
-    // });
+    this.authService.signUpUser({ 
+      email: this.signUpForm.value.email,
+      nip: this.signUpForm.value.nip,
+      nameOfCompany: this.signUpForm.value.nameOfCompany,
+      city: this.signUpForm.value.city,
+      password: this.signUpForm.value.password,
+      postalCode: this.signUpForm.value.postalCode 
+    });
     console.log(this.signUpForm.value);
 
 

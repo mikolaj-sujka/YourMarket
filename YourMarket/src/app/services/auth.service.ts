@@ -21,10 +21,11 @@ export class AuthService {
   }
 
   loginUser(user: SignInUser) {
-    this.http.post<{ token: string} >("http://localhost:3005/api/auth/signin", user)
+    this.http.post<{ token: string, message:string} >("http://localhost:3005/api/auth/signin", user)
       .subscribe(response => {
         const token = response.token;
         this.token = token;
+        console.log(response.message)
       });
   }
 }
