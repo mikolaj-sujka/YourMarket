@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // components
 import { AppComponent } from './app.component';
@@ -19,10 +20,13 @@ import { FilterProductsComponent } from './search-page/filter-products/filter-pr
 import { MyBasketViewComponent } from './my-basket-view/my-basket-view.component';
 import { MyProfileViewComponent } from './my-profile-view/my-profile-view.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './validations/text-input/text-input.component';
 
+// interceptors
+import { LoadingInterceptor } from './_interceptors/loading-interceptor';
+
 // 3rd
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -38,17 +42,20 @@ import { TextInputComponent } from './validations/text-input/text-input.componen
     MyBasketViewComponent,
     MyProfileViewComponent,
     OrderHistoryComponent,
-    TextInputComponent
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSelectModule, 
-    ReactiveFormsModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

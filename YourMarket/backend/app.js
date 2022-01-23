@@ -33,6 +33,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
 module.exports = app;

@@ -92,8 +92,9 @@
     <div class="col text-center">
       <button
         class="btn btn-continue"
-        type="submit"
+        type="button"
         [disabled]="signUpForm.invalid || (!checkedCheckbox && !signUpForm.touched)"
+        (click)="onSubmit()"
       >
         Sign Up
       </button>

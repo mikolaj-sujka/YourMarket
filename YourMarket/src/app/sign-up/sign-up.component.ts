@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
+// services
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-  signUpForm: FormGroup;
+  signUpForm!: FormGroup;
   checkedCheckbox: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -40,5 +43,21 @@ export class SignUpComponent implements OnInit {
       return control?.value === control?.parent?.controls[matchTo].value 
         ? null : {isMatching: true}
     }
+  }
+
+  onSubmit() {
+    // this.authService.signUpUser({ 
+    //   email: this.signUpForm.value.email,
+    //   nip: this.signUpForm.value.nip,
+    //   nameOfCompany: this.signUpForm.value.nameOfCompany,
+    //   city: this.signUpForm.value.city,
+    //   password: this.signUpForm.value.password,
+    //   repeatPassword: this.signUpForm.value.repeatPassword,
+    //   postalCode: this.signUpForm.value.postalCode 
+    // });
+    console.log(this.signUpForm.value);
+
+
+    this.signUpForm.reset();
   }
 }

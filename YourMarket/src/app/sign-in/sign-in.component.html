@@ -53,9 +53,10 @@
           <hr class="hr-1 mb-5" />
           <button
             [disabled]="signInForm.invalid"
-            type="submit"
+            type="button"
             class="btn btn-sign-in sign-in-up-margin"
             routerLink="/home-page"
+            (click)="onSubmit()"
           >
             Sign In
           </button>
