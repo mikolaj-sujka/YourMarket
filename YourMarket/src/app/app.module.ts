@@ -29,6 +29,7 @@ import { LoadingInterceptor } from './_interceptors/loading-interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './guards/auth.guard';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { AuthGuard } from './guards/auth.guard';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
+    NgbModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },

@@ -11,6 +11,7 @@ import { SignUpUser } from '../models/sign-up.model';
 
 // 3rd
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,8 @@ export class AuthService {
   private tokenTimer: any;
   private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router, private toastrService: ToastrService) { }
+  constructor(private http: HttpClient, private router: Router, private toastrService: ToastrService,
+              private spinnerService: NgxSpinnerService) { }
 
   signUpUser(user: SignUpUser) {
     this.http.post("http://localhost:3005/api/auth/signup", user)
@@ -55,10 +57,10 @@ export class AuthService {
           // const expirationDate = new Date(now.getTime() + expiresInDuration * 1000);
           // console.log(expirationDate);
           // this.saveAuthData(token, expirationDate);
-          this.router.navigate(["/home-page"]);
           this.toastrService.success("Successfully signed in!", "Sign In success", {
             positionClass: 'toast-bottom-center'
           })
+          this.router.navigate(["/home-page"]);
         }
       }, error => {
           console.log(error);
@@ -74,10 +76,15 @@ export class AuthService {
     this.authStatusListener.next(false);
     // clearTimeout(this.tokenTimer);
     this.clearAuthData();
+    this.showSpinner();
     this.toastrService.success("Successfully logged out!", "Logout success", {
       positionClass: 'toast-bottom-center'
     })
-    this.router.navigate(["/"]);
+
+    setTimeout(() => {
+      this.spinnerService.hide();
+      this.router.navigate(["/"]);
+    }, 2000);
   }
 
   // getters
@@ -104,5 +111,13 @@ export class AuthService {
     localStorage.removeItem("expiration");
   }
 
+  private showSpinner() {
+    this.spinnerService.show(undefined, {
+      type: 'timer',
+      bdColor: 'rgba(255,255,255,0.9)',
+      color: '#905ECE',
+      size: 'large',
+    });
+  }
 
 }
