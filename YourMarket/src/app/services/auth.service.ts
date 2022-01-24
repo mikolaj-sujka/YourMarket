@@ -1,22 +1,41 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SignInUser } from '../models/sign-in.model';
+import { Router } from '@angular/router';
+
+// rxjs
+import { Subject } from 'rxjs';
 
 // models
+import { SignInUser } from '../models/sign-in.model';
 import { SignUpUser } from '../models/sign-up.model';
+
+// 3rd
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private token: string; // jwt
+  private isAuthenticated = false;
+  private token: string;
+  private tokenTimer: any;
+  private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private toastrService: ToastrService) { }
 
   signUpUser(user: SignUpUser) {
     this.http.post("http://localhost:3005/api/auth/signup", user)
       .subscribe(response => {
         console.log(response);
+        this.router.navigate(["/"]);
+        this.toastrService.success("Successfully signed up!", "Sign Up success", {
+          positionClass: 'toast-bottom-center'
+        })
+      }, error => {
+        console.log(error);
+        this.toastrService.error("Email was taken or some of inputs does not match!", "Sign Up error", {
+          positionClass: 'toast-bottom-center'
+        });
       });
   }
 
@@ -26,6 +45,64 @@ export class AuthService {
         const token = response.token;
         this.token = token;
         console.log(response.message)
+
+        if(token) {
+          // const expiresInDuration = response.expiresIn;
+          // this.setAuthTimer(expiresInDuration);
+          this.isAuthenticated = true;
+          this.authStatusListener.next(true);
+          // const now = new Date();
+          // const expirationDate = new Date(now.getTime() + expiresInDuration * 1000);
+          // console.log(expirationDate);
+          // this.saveAuthData(token, expirationDate);
+          this.router.navigate(["/home-page"]);
+          this.toastrService.success("Successfully signed in!", "Sign In success", {
+            positionClass: 'toast-bottom-center'
+          })
+        }
+      }, error => {
+          console.log(error);
+          this.toastrService.error("Username or password does not match!", "Sign In error", {
+            positionClass: 'toast-bottom-center'
+          });
       });
   }
+
+  logout() {
+    this.token = null;
+    this.isAuthenticated = false;
+    this.authStatusListener.next(false);
+    // clearTimeout(this.tokenTimer);
+    this.clearAuthData();
+    this.toastrService.success("Successfully logged out!", "Logout success", {
+      positionClass: 'toast-bottom-center'
+    })
+    this.router.navigate(["/"]);
+  }
+
+  // getters
+  getToken() {
+    return this.token;
+  }
+
+  getIsAuth() {
+    return this.isAuthenticated;
+  }
+
+  getAuthStatusListener() {
+    return this.authStatusListener.asObservable();
+  }
+
+  // localStorage
+  private saveAuthData(token: string, expirationDate: Date) {
+    localStorage.setItem("token", token);
+    localStorage.setItem("expiration", expirationDate.toISOString());
+  }
+
+  private clearAuthData() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiration");
+  }
+
+
 }

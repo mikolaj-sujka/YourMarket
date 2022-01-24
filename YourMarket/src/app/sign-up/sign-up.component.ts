@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignUpComponent implements OnInit {
   signUpForm!: FormGroup;
-  checkedCheckbox: boolean = false;
+  checkedCheckbox: boolean = true;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
 
@@ -34,7 +34,7 @@ export class SignUpComponent implements OnInit {
 
   onClickCheckbox(event: any) {
     if (event.target.checked) {
-      this.checkedCheckbox = true;
+      this.checkedCheckbox = !this.checkedCheckbox;
     }
   }
 
@@ -58,5 +58,12 @@ export class SignUpComponent implements OnInit {
 
 
     this.signUpForm.reset();
+  }
+
+  allowSignUp() {
+    if(this.checkedCheckbox === true && this.signUpForm.valid) {
+      return true;
+    }
+    return false;
   }
 }

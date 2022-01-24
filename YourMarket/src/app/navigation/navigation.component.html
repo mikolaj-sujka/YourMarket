@@ -1,6 +1,6 @@
 <nav class="fixed-top navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand font-medium" href="#"
+    <a class="navbar-brand font-medium" routerLink="/home-page"
       ><span class="font-market-color">YourMarket</span></a
     >
     <button
@@ -32,7 +32,7 @@
         </li>
       </ul>
       <button class="btn btn-logout">
-        <span class="font-medium-2 normal-weight" routerLink="/">Log Out</span>
+        <span class="font-medium-2 normal-weight" (click)="onLogout()">Log Out</span>
       </button>
     </div>
   </div>

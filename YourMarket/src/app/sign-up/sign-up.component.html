@@ -93,7 +93,7 @@
       <button
         class="btn btn-continue"
         type="button"
-        [disabled]="signUpForm.invalid || (!checkedCheckbox && !signUpForm.touched)"
+        [disabled]="!allowSignUp()"
         (click)="onSubmit()"
       >
         Sign Up

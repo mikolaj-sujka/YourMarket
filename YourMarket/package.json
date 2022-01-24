@@ -30,6 +30,7 @@
     "mongoose": "^6.1.7",
     "mongoose-unique-validator": "^3.0.0",
     "ngx-spinner": "^13.0.0",
+    "ngx-toastr": "^14.2.1",
     "ngx-translate-multi-http-loader": "^7.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",

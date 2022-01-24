@@ -27,6 +27,8 @@ import { LoadingInterceptor } from './_interceptors/loading-interceptor';
 
 // 3rd
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -51,10 +53,14 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     MatSelectModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    AuthGuard
   ],
   bootstrap: [AppComponent],
 })

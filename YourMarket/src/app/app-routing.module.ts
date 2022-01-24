@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 // components 
 import { HomePageComponent } from './home-page/home-page.component';
@@ -13,11 +14,18 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
   { path: '', component: SignInComponent, data: { title: 'sign-in', depth: 1 }},
   { path: 'register', component: SignUpComponent, data: { title: 'sign-up', depth: 2}},
-  { path: 'home-page', component: HomePageComponent},
-  { path: 'search-page', component: SearchPageComponent},
-  { path: 'my-basket', component: MyBasketViewComponent},
-  { path: 'my-profile', component: MyProfileViewComponent},
-  { path: 'order-history', component: OrderHistoryComponent}
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'home-page', component: HomePageComponent},
+      { path: 'search-page', component: SearchPageComponent},
+      { path: 'my-basket', component: MyBasketViewComponent},
+      { path: 'my-profile', component: MyProfileViewComponent},
+      { path: 'order-history', component: OrderHistoryComponent}
+    ]
+  },
 ];
 
 @NgModule({
