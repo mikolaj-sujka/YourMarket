@@ -40,6 +40,10 @@
   margin-right: 70px;
 }
 
+.font-medium-5 {
+  font-size: 18px !important;
+}
+
 .font-small {
   font-size: 15px !important;
   font-weight: 700 !important;
@@ -64,6 +68,10 @@
 
 .font-market-color {
   color: #905ECE;
+
+  &-2 {
+    color: #773DBD;
+  }
 }
 
 .font-color-grey {

@@ -21,7 +21,7 @@
       <p class="text-uppercase">
         Leave your <span class="font-market-color">contact info</span> here!
       </p>
-      <form>
+      <form [formGroup]="contactForm">
         <div class="mb-3">
           <input
             type="text"
@@ -29,6 +29,7 @@
             id="phoneNumber"
             aria-describedby="emailHelp"
             placeholder="Phone Number"
+            [formControl]="contactForm.controls.phoneNumber"
           />
         </div>
         <div class="mb-3">
@@ -37,6 +38,7 @@
             class="form-control form-control-contact"
             id="email"
             placeholder="Email"
+            [formControl]="contactForm.controls.email"
           />
         </div>
         <div class="mb-3">
@@ -45,6 +47,7 @@
             class="form-control form-control-contact"
             id="nameOfCompany"
             placeholder="Name Of Company"
+            [formControl]="contactForm.controls.nameOfCompany"
           />
         </div>
         <div class="row">
@@ -54,10 +57,11 @@
                 id="exampleFormControlTextarea1"
                 rows="6"
                 placeholder="Additional Info"
+                [formControl]="contactForm.controls.additionalInfo"
               ></textarea>
           </div>
           <div class="col align-self-end">
-            <button type="submit" class="btn btn-send">Send</button>
+            <button type="submit" class="btn btn-send" [disabled]="contactForm.invalid" (click)="onSend()">Send</button>
           </div>
         </div>
       </form>

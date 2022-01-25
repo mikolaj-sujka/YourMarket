@@ -42,6 +42,10 @@
     width: 138px !important;
     text-transform: uppercase !important;
     color: rgba(255, 255, 255, 0.33);
+
+    &:hover {
+      color: #fff !important;
+    }
   }
 
 }
