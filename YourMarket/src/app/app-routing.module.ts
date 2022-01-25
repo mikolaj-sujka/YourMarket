@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'home-page', component: HomePageComponent},
       { path: 'search-page', component: SearchPageComponent},
       { path: 'my-basket', component: MyBasketViewComponent},
-      { path: 'my-profile', component: MyProfileViewComponent},
+      { path: 'my-profile/:id', component: MyProfileViewComponent},
       { path: 'order-history', component: OrderHistoryComponent}
     ]
   },

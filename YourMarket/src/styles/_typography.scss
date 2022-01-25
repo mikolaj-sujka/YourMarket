@@ -48,10 +48,6 @@
   font-size: 15px !important;
   font-weight: 700 !important;
 
-  &-sign-in {
-    text-transform: uppercase;
-  }
-
   &-info {
     font-size: 16px !important;
     padding-right: 45px !important;
@@ -64,6 +60,14 @@
 
 .font-small-2 {
   font-size: 15px !important;
+}
+
+.font-small-3 {
+  font-size: 12px !important;
+
+  &-sign-in {
+    text-transform: uppercase;
+  }
 }
 
 .font-market-color {

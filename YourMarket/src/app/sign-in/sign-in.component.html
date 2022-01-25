@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col pt-4 mt-5 sign-in-img-info">
-      <h1 class="font-big font-big-sign-in pb-3">
+      <h1 class="font-medium font-big-sign-in pb-3">
         <span class="bold-weight font-market-color">YourMarket</span> Account
       </h1>
       <img
@@ -9,16 +9,17 @@
         alt="shopping-online"
         class="shop-img"
       />
-      <h2 class="font-medium font-medium-sign-in pt-4">
+      <h2 class="font-medium-2 bold-weight font-medium-sign-in pt-4">
         Lörem ipsum fanat
         <span class="font-market-color">egovis midulig</span> nagelprotest.
         Tremåliga smartball.
       </h2>
-      <p class="font-small font-small-sign-in pt-4 font-color-grey">
+      <p class="font-small-3 font-small-3-sign-in pt-4 font-color-grey">
         Lörem ipsum nynt dötyvis trisocial. Laheten bektiga. Gretaeffekten
         multiheskapet prengen. Palaling triktig i kujyheten. Spegen vadade
         hajygt och rebel liling.
       </p>
+      <button class="btn btn-contact-us mt-3" (click)="open(content)">Contact Us</button>
     </div>
     <div class="col p-4 form-container">
       <div class="form-container-background">
@@ -64,3 +65,11 @@
     </div>
   </div>
 </div>
+
+<ng-template #content>
+  <div class="contact-us-content mt-5 ms-5 mb-5">
+    <p class="font-medium-3"><span class="font-market-color">Phone number: </span> <span>+48 998123780</span></p>
+    <p class="font-medium-3"><span class="font-market-color">Email: </span> <span> yourmarket@gmail.com</span></p>
+    <p class="font-medium-3"><span class="font-market-color">Address: </span> <span>Chicago, 303-22</span></p>
+  </div>
+</ng-template>

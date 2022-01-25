@@ -4,6 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // services
 import { AuthService } from '../services/auth.service';
 
+// 3rd
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -11,8 +14,9 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignInComponent implements OnInit {
   signInForm!: FormGroup;
+  closeResult = "";
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private modal: NgbModal) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -36,4 +40,22 @@ export class SignInComponent implements OnInit {
     this.signInForm.reset();
   }
 
+  open(content) {
+    this.modal.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 }
+

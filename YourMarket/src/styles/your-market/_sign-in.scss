@@ -20,7 +20,7 @@
       height: 703px !important;
       border-radius: 11px;
     }
-    
+
     a {
       text-decoration: none;
       color: #905ECE;
@@ -45,6 +45,22 @@
       border: 2px solid #F1F1F1;
       transform: rotate(-0.18deg);
       margin-top: 130px;
+    }
+  }
+
+  .btn-contact-us {
+    width: 250px;
+    height: 53px;
+    border-radius: 19px !important;
+    background: #fff;
+    color: #905ECE;
+    border: 1px solid #905ECE;
+    padding: 0 !important;
+    font-size: 20px !important;
+
+    &:hover {
+      background: #905ECE;
+      color: #fff;
     }
   }
 

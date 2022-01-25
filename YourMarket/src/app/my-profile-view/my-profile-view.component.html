@@ -7,34 +7,34 @@
     <hr class="shared-hr" />
     <div class="container-info mt-5 pt-4 d-flex flex-row bd-highlight justify-content-between">
         <div class="p-2 bd-highlight">
-            <span class="font-medium-2 bold-weight">Name</span>
-        </div>
-        <div class="p-2 bd-highlight">
-            <span class="font-medium-2">John</span>
-        </div>
-        <div class="p-2 bd-highlight">
-            <span class="font-medium-2 text-primary">Edit</span>
-        </div>
-    </div>
-    <hr class="info-hr">
-    <div class="container-info mt-4 pt-3 d-flex flex-row bd-highlight justify-content-between">
-        <div class="p-2 bd-highlight">
-            <span class="font-medium-2 bold-weight">Surname</span>
-        </div>
-        <div class="p-2 bd-highlight">
-            <span class="font-medium-2">Newman</span>
-        </div>
-        <div class="p-2 bd-highlight">
-            <span class="font-medium-2 text-primary">Edit</span>
-        </div>
-    </div>
-    <hr class="info-hr">
-    <div class="container-info mt-4 pt-3 d-flex flex-row bd-highlight justify-content-between">
-        <div class="p-2 bd-highlight">
             <span class="font-medium-2 bold-weight">Email</span>
         </div>
         <div class="p-2 bd-highlight">
-            <span class="font-medium-2">johnwnewman@gmail.com</span>
+            <span class="font-medium-2">{{ user?.email }} </span>
+        </div>
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2 text-primary">Edit</span>
+        </div>
+    </div>
+    <hr class="info-hr">
+    <div class="container-info mt-4 pt-3 d-flex flex-row bd-highlight justify-content-between">
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2 bold-weight">City</span>
+        </div>
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2">{{ user?.city }}</span>
+        </div>
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2 text-primary">Edit</span>
+        </div>
+    </div>
+    <hr class="info-hr">
+    <div class="container-info mt-4 pt-3 d-flex flex-row bd-highlight justify-content-between">
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2 bold-weight">NIP</span>
+        </div>
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2">{{ user?.nip }}</span>
         </div>
         <div class="p-2 bd-highlight">
             <span class="font-medium-2 text-primary">Edit</span>
@@ -46,7 +46,19 @@
             <span class="font-medium-2 bold-weight">Name of company</span>
         </div>
         <div class="p-2 bd-highlight">
-            <span class="font-medium-2">Newman sp.z.o.o.</span>
+            <span class="font-medium-2">{{ user?.nameOfCompany }}</span>
+        </div>
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2 text-primary">Edit</span>
+        </div>
+    </div>
+    <hr class="info-hr">
+    <div class="container-info mt-4 pt-3 d-flex flex-row bd-highlight justify-content-between">
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2 bold-weight">Postal Code</span>
+        </div>
+        <div class="p-2 bd-highlight">
+            <span class="font-medium-2">{{ user?.postalCode }}</span>
         </div>
         <div class="p-2 bd-highlight">
             <span class="font-medium-2 text-primary">Edit</span>
@@ -58,7 +70,7 @@
             <span class="font-medium-2 bold-weight">Password</span>
         </div>
         <div class="p-2 bd-highlight">
-            <span class="font-medium-2">...</span>
+            <span class="font-medium-2">***********************</span>
         </div>
         <div class="p-2 bd-highlight">
             <span class="font-medium-2 text-primary">Edit</span>

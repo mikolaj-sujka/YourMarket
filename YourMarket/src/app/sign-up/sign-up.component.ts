@@ -22,11 +22,11 @@ export class SignUpComponent implements OnInit {
 
   initializeForm() {
     this.signUpForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      nip: ['', [Validators.required]],
-      postalCode: ['', [Validators.required]],
-      nameOfCompany: ['', [Validators.required]],
-      city: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email, Validators.minLength(3)]],
+      nip: ['', [Validators.required, Validators.minLength(10)]],
+      postalCode: ['', [Validators.required, Validators.minLength(6)]],
+      nameOfCompany: ['', [Validators.required, Validators.minLength(3)]],
+      city: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)]],
       repeatPassword: ['', [Validators.required, this.matchValues('password')]],
     });

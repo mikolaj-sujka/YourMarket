@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  userId = localStorage.getItem('userId');
 
   constructor(private router: Router, private authService: AuthService) { }
 
