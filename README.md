@@ -10,7 +10,7 @@ Dla bezpieczeństwa użytkownika połączenie jest szyfrowane HTTPS. Hasło przy
 - Node.js wraz z Express.js, Angular, Bootstrap 5, SASS (.scss), NgBootstrap, MongoDb
 
 
-# Funkcjonalności, które zostaną dodane (25.01, 26.01)
+# Funkcjonalności, które zostaną dodane (27.01)
 1. Dodawanie do koszyka.
 2. Finalizacja zamówienia
 
