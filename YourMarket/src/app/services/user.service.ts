@@ -28,14 +28,14 @@ export class UserService {
     return this.http.get<SignUpUser>(apiUrl + id);
   }
 
-  updateUserData(id: string, form: NgForm, email: string, postalCode: string, nameOfCompany: string): Observable<Object> {
+  updateUserData(id: string, form: NgForm, email: string, password: string, nameOfCompany: string): Observable<Object> {
     return this.http.post(apiUrl + id, {
       email: email,
       nip: form.value.nip,
-      postalCode: postalCode,
+      postalCode: form.value.postalCode,
       city: form.value.city,
       nameOfCompany: nameOfCompany,
-      password: form.value.password
+      password: password
     });
   }
 }

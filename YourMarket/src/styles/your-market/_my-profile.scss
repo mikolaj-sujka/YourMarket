@@ -19,3 +19,29 @@
   right: 140px;
   top: 140px;
 }
+
+.form-control-edit {
+  width: 400px !important;
+}
+
+.edit-container-wrapper {
+  .form-control {
+    border: 1px solid #905ECE !important;
+  }
+}
+
+.btn-change {
+  width: 200px;
+  height: 43px;
+  border-radius: 19px !important;
+  background: #fff;
+  color: #905ECE !important;
+  border: 1px solid #905ECE !important;
+  padding: 0 !important;
+  font-size: 20px !important;
+
+  &:hover {
+    background: #905ECE;
+    color: #fff !important;
+  }
+}

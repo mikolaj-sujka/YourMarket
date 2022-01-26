@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: '',
     runGuardsAndResolvers: 'always',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: 'home-page', component: HomePageComponent},
       { path: 'search-page', component: SearchPageComponent},
