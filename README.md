@@ -10,11 +10,9 @@ Dla bezpieczeństwa użytkownika połączenie jest szyfrowane HTTPS. Hasło przy
 - Node.js wraz z Express.js, Angular, Bootstrap 5, SASS (.scss), NgBootstrap, MongoDb
 
 
-# Funkcjonalności, które zostaną dodane (25.01, 26.01)
-1. Filtracja produktów.
-2. Dodawanie do koszyka.
-3. Edycja danych.
-4. Finalizacja zamówienia
+# Funkcjonalności, które zostaną dodane (27.01)
+1. Dodawanie do koszyka.
+2. Finalizacja zamówienia
 
 # Instalacja i uruchomienie projektu 
 1. Clone projektu, bądź pobranie całości (repozytorium jest publiczne, więc nie powinno być problemu).
