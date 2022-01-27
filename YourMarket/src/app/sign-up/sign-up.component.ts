@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignUpComponent implements OnInit {
   signUpForm!: FormGroup;
-  checkedCheckbox: boolean = true;
+  checkedCheckbox: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService) {}
 

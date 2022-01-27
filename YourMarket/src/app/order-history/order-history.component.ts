@@ -18,9 +18,9 @@ export class OrderHistoryComponent implements OnInit {
     this.basketService.basket = [];
   }
 
-  get randomNumber() {
-    return Math.floor(100000 + Math.random() * 900000);
-  }
+  // get randomNumber() {
+  //   return Math.floor(100000 + Math.random() * 900000);
+  // }
 
   get currentData() {
     var today = new Date();
