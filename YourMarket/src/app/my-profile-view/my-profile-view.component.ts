@@ -39,7 +39,6 @@ export class MyProfileViewComponent implements OnInit {
   getUserById(id: string) {
     this.userService.getUserById(id).subscribe((user) => {
       this.user = user;
-      console.log(user);
     });
   }
 

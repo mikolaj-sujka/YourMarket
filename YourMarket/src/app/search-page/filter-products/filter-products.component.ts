@@ -11,7 +11,7 @@ import { BasketService } from 'src/app/services/basket.service';
 })
 export class FilterProductsComponent implements OnInit {
   products: Product[];
-  @Output() dataFiltred = new EventEmitter<Product[] | Product>();
+  @Output() dataFiltred = new EventEmitter<Product[]>();
 
   constructor(private basketService: BasketService) { }
 
@@ -21,16 +21,14 @@ export class FilterProductsComponent implements OnInit {
 
   public onSearchProduct(form: NgForm) {
     let name = form.value.productName;
-    let findArticles = this.findProduct(name);
+    let findArticles = (this.findProduct(name) as Product[]);
     this.dataFiltred.emit(findArticles);
-
-    console.log(findArticles)
   }
 
   private findProduct(productName: string) {
     if(productName === '') {
       return this.products;
     }
-    return this.products.filter(p => p.name === productName)[0];
+    return this.products.filter(p => p.name === productName);
   }
 }

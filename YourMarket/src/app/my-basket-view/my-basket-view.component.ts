@@ -6,7 +6,6 @@ import { Product } from '../models/product.model';
 
 // services
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ToastrService } from 'ngx-toastr';
 import { BasketService } from '../services/basket.service';
 
 @Component({
@@ -17,8 +16,7 @@ import { BasketService } from '../services/basket.service';
 export class MyBasketViewComponent implements OnInit {
   basket: Product[] = [];
 
-  constructor(private basketService: BasketService, private router: Router,
-              private toastrService: ToastrService, private spinnerService: NgxSpinnerService) { }
+  constructor(private basketService: BasketService, private router: Router, private spinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.basket = this.basketService.getBasket();
@@ -29,6 +27,8 @@ export class MyBasketViewComponent implements OnInit {
     this.basket.forEach((product) => {
       total += product.price;
     })
+
+    this.basketService.setTotal(total);
 
     return total;
   }

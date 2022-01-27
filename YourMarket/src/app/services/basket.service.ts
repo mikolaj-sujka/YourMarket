@@ -12,20 +12,9 @@ import { Product } from '../models/product.model';
 export class BasketService {
   foundProducts: Product[] | Product;
   basket: Product[] = [];
+  totalAmount: number; 
 
   constructor(private toastrService: ToastrService) {}
-
-  getProducts() {
-    return this.products;
-  }
-
-  setFilterData(foundProducts: Product[] | Product) {
-    this.foundProducts = foundProducts;
-  }
-
-  getFilteredData() {
-    return this.foundProducts;
-  }
 
   addToBasket(product: Product) {
     this.basket.push(product);
@@ -35,8 +24,32 @@ export class BasketService {
     })
   }
 
+  // setter
+
+  setFilterData(foundProducts: Product[] | Product) {
+    this.foundProducts = foundProducts;
+  }
+  
+  setTotal(total: number) {
+    this.totalAmount = total;
+  }
+
+  // getter
+
+  getProducts() {
+    return this.products;
+  }
+
+  getTotal() {
+    return this.totalAmount;
+  }
+
   getBasket() {
     return [...this.basket];
+  }
+
+  getFilteredData() {
+    return this.foundProducts;
   }
 
   // products

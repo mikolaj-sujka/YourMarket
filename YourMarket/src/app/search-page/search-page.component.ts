@@ -4,42 +4,40 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BasketService } from '../services/basket.service';
 
-// models 
+// models
 import { Product } from '../models/product.model';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
-  styleUrls: ['./search-page.component.scss']
+  styleUrls: ['./search-page.component.scss'],
 })
 export class SearchPageComponent implements OnInit {
   isFiltered: boolean = false;
-  foundProducts: Product[] | Product;
+  foundProducts: Product[];
 
-  constructor(private spinnerService: NgxSpinnerService, private basketService: BasketService, private toastrService: ToastrService) { }
+  constructor(
+    private spinnerService: NgxSpinnerService,
+    private basketService: BasketService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  isDataFiltered(foundProducts: Product[] | Product) {
+  isDataFiltered(foundProducts: Product[]) {
     this.showSpinner();
     this.foundProducts = foundProducts;
-    console.log(foundProducts)
-    
+
     setTimeout(() => {
       this.isFiltered = true;
       this.spinnerService.hide();
-    }, 2000)
+    }, 2000);
   }
 
   onAddBasket(productChosen: Product) {
-    console.log(productChosen)
     let product: Product = {
       name: productChosen.name,
-      price: productChosen.price
-    }
-    console.log(product)
+      price: productChosen.price,
+    };
     this.basketService.addToBasket(product);
   }
 
@@ -51,5 +49,4 @@ export class SearchPageComponent implements OnInit {
       size: 'large',
     });
   }
-
 }

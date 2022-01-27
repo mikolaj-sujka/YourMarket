@@ -20,7 +20,6 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
-    console.log(this.signInForm)
   }
 
   initializeForm() {
@@ -36,7 +35,6 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     this.authService.loginUser({ email: this.signInForm.value.email, password: this.signInForm.value.password})
-    console.log(this.signInForm.value)
     this.signInForm.reset();
   }
 

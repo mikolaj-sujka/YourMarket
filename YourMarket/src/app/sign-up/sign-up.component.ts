@@ -17,7 +17,6 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
-    console.log(this.signUpForm);
   }
 
   initializeForm() {
@@ -54,8 +53,6 @@ export class SignUpComponent implements OnInit {
       password: this.signUpForm.value.password,
       postalCode: this.signUpForm.value.postalCode 
     });
-    console.log(this.signUpForm.value);
-
 
     this.signUpForm.reset();
   }
