@@ -6,28 +6,33 @@
     </h1>
     <hr class="basket-info-hr" />
     <div class="d-flex flex-row bd-highlight justify-content-between basket-info">
-      <p class="font-small-2 p-2 bd-highlight">3 item(s) in your basket</p>
+      <p class="font-small-2 p-2 bd-highlight">{{ basket.length }} item(s) in your basket</p>
       <p class="font-small-2 p-2 bd-highlight">Quantity</p>
       <p class="font-small-2 p-2 bd-highlight">Total</p>
     </div>
     <hr class="basket-info-hr-absolute" />
     <div class="row">
       <div class="col">
+        <div class="d-flex flex-row bd-highlight justify-content-between basket-info" *ngFor="let product of basket">
+          <p class="font-small-2 p-2 bd-highlight">{{ product.name }}</p>
+          <p class="font-small-2 p-2 bd-highlight">-------</p>
+          <p class="font-small-2 p-2 bd-highlight">{{ product.price }}</p>
+        </div>
       </div>
       <div class="col">
           <div class="square-payment">
-              <p class="font-medium-2 font-color-grey-3 mt-5 pt-1 ms-3">You have 3 item(s) in your basket</p>
+              <p class="font-medium-2 font-color-grey-3 mt-5 pt-1 ms-3">You have {{ basket.length }} item(s) in your basket</p>
               <div class="d-flex flex-row bd-highlight justify-content-around">
                   <p class="font-small-2 font-color-grey-3 p-2 bd-highlight">Subtotal</p>
-                  <p class="font-small-2 font-color-grey-3 p-2 bd-highlight">3200,5$</p>
+                  <p class="font-small-2 font-color-grey-3 p-2 bd-highlight">{{ Total }}$</p>
               </div>
               <!-- <hr class="basket-payment-hr"> -->
               <div class="d-flex flex-row bd-highlight justify-content-around mt-5 pt-1 payment-total">
                 <p class="font-medium-2 p-2 bd-highlight">Total</p>
-                <p class="font-medium-2 p-2 bd-highlight">3200,5$</p>
+                <p class="font-medium-2 p-2 bd-highlight">{{ Total }}$</p>
               </div>
               <!-- <hr class="basket-payment-hr"> -->
-              <button class="btn btn-checkout mt-4"><span class="text-uppercase font-small-checkout">Proceed to checkout</span></button>
+              <button class="btn btn-checkout mt-4" (click)="onCheckout()"><span class="text-uppercase font-small-checkout">Proceed to checkout</span></button>
           </div>
           <div class="payment-icons d-flex flex-row bd-highlight justify-content-around mt-5">
             <div class="visa-ic p-2 bd-highlight"></div>

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 
+// 3rd
+import { ToastrService } from 'ngx-toastr';
+
 // models
 import { Product } from '../models/product.model';
 
@@ -8,8 +11,9 @@ import { Product } from '../models/product.model';
 })
 export class BasketService {
   foundProducts: Product[] | Product;
+  basket: Product[] = [];
 
-  constructor() {}
+  constructor(private toastrService: ToastrService) {}
 
   getProducts() {
     return this.products;
@@ -19,8 +23,20 @@ export class BasketService {
     this.foundProducts = foundProducts;
   }
 
-  getFiltredData() {
+  getFilteredData() {
     return this.foundProducts;
+  }
+
+  addToBasket(product: Product) {
+    this.basket.push(product);
+
+    this.toastrService.success("Successfully add product to basket!", "Adding product success", {
+      positionClass: 'toast-bottom-center'
+    })
+  }
+
+  getBasket() {
+    return [...this.basket];
   }
 
   // products
