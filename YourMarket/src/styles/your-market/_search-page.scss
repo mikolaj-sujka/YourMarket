@@ -1,7 +1,38 @@
 .container-search {
-    margin-top: 95px !important;
+  margin-top: 95px !important;
 
-    .category-img {
-        width: 400px !important;
+  .category-img {
+    width: 400px !important;
+  }
+
+  &-products {
+    margin-top: 160px !important;
+  }
+
+  .filter-container {
+    margin-left: 200px !important;
+    background: rgba(196, 196, 196, 0.1);
+    margin-right: 200px !important;
+    
+    &-margin {
+        margin-left: 200px !important;
+        margin-right: 200px !important;
     }
+  }
+
+  .btn-add-basket {
+    width: 250px;
+    height: 53px;
+    border-radius: 19px !important;
+    background: #fff;
+    color: #905ECE;
+    border: 1px solid #905ECE;
+    padding: 0 !important;
+    font-size: 20px !important;
+
+    &:hover {
+      background: #905ECE;
+      color: #fff;
+    }
+  }
 }

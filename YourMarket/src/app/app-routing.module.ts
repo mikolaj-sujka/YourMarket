@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 
 // components 
 import { HomePageComponent } from './home-page/home-page.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
       { path: 'home-page', component: HomePageComponent},
       { path: 'search-page', component: SearchPageComponent},
       { path: 'my-basket', component: MyBasketViewComponent},
-      { path: 'my-profile/:id', component: MyProfileViewComponent},
+      { path: 'my-profile/:id', component: MyProfileViewComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       { path: 'order-history', component: OrderHistoryComponent}
     ]
   },

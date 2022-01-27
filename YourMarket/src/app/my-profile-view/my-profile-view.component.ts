@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -21,6 +21,7 @@ export class MyProfileViewComponent implements OnInit {
   editMode: boolean = false;
   closeResult: string;
   userId = localStorage.getItem('userId');
+  @ViewChild('editUserForm') editForm!: NgForm;
 
   constructor(
     private userService: UserService,

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { find } from 'rxjs/operators';
+import { Product } from 'src/app/models/product.model';
+import { BasketService } from 'src/app/services/basket.service';
 
 @Component({
   selector: 'app-filter-products',
@@ -6,10 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-products.component.scss']
 })
 export class FilterProductsComponent implements OnInit {
+  products: Product[];
+  @Output() dataFiltred = new EventEmitter<Product[] | Product>();
 
-  constructor() { }
+  constructor(private basketService: BasketService) { }
 
   ngOnInit(): void {
+    this.products = this.basketService.getProducts();
   }
 
+  public onSearchProduct(form: NgForm) {
+    let name = form.value.productName;
+    let findArticles = this.findProduct(name);
+    this.dataFiltred.emit(findArticles);
+
+    console.log(findArticles)
+  }
+
+  private findProduct(productName: string) {
+    if(productName === '') {
+      return this.products;
+    }
+    return this.products.filter(p => p.name === productName)[0];
+  }
 }
