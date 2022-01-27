@@ -1,18 +1,12 @@
 # YourMarket
 ## Opis
 Aplikacja YourMarket pozwala użytkownikowi na założenie konta, logowanie, wylogowania, przeglądanie produktów dostępnych na naszej aplikacji. Użytkownik ma możliwość filtracji produktów
-aby odnaleźć te, które go interesują. Następnie konkretne produkty może dodać do koszyka i zatwierdzić płatność. W końcowej fazie będzie możliwy podgląd historii zamówień
-dla użytkownika. Dodatkowo użytkownik może w każdym momencie edytować swoje dane, bądź wysłać dane kontaktowe.
+aby odnaleźć te, które go interesują. Następnie konkretne produkty może dodać do koszyka i zatwierdzić płatność. W końcowej fazie będzie możliwy podgląd historii zamówień dla użytkownika. Dodatkowo użytkownik może w każdym momencie edytować swoje dane, bądź wysłać dane kontaktowe.
 
-Dla bezpieczeństwa użytkownika połączenie jest szyfrowane HTTPS. Hasło przy rejestracji jest szyfrowane i dodatkowo został dodany AuthGuard (powoduje, że niezalogowany użytkownik nie może przejśc do strony dla zalogowanych) i PreventUnsavedChangesGuard.
+Dla bezpieczeństwa użytkownika połączenie jest szyfrowane HTTPS. Hasło przy rejestracji jest szyfrowane i dodatkowo został dodany AuthGuard (powoduje, że niezalogowany użytkownik nie może przejśc do strony dla zalogowanych).
 
 # Technologie
 - Node.js wraz z Express.js, Angular, Bootstrap 5, SASS (.scss), NgBootstrap, MongoDb
-
-
-# Funkcjonalności, które zostaną dodane (27.01)
-1. Dodawanie do koszyka.
-2. Finalizacja zamówienia
 
 # Instalacja i uruchomienie projektu 
 1. Clone projektu, bądź pobranie całości (repozytorium jest publiczne, więc nie powinno być problemu).
